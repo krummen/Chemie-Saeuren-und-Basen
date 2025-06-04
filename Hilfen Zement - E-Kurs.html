@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Kurs: Hilfe Deutung & Merksatz (Zementbrand)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>E-Kurs: Hilfestellungen Zementbrand</h1>
+
+    <section id="deutung-e">
+        <h2>Deutung (E-Kurs)</h2>
+        <p>Erkläre das Ergebnis eurer Untersuchung detailliert und unter Verwendung von Reaktionsgleichungen.</p>
+
+        <button onclick="toggleHint('e-deutung-ph-zuordnung')">pH-Wert, saure & alkalische Lösungen</button>
+        <div id="e-deutung-ph-zuordnung" class="hidden hint-box">
+            <p>Ihr habt den pH-Wert der Calciumhydroxid-Lösung bestimmt. Dieser Wert zeigt an, ob eine Lösung sauer, neutral oder alkalisch ist.</p>
+            <ul>
+                <li><strong>Saure Lösungen</strong> (niedriger pH-Wert) zeichnen sich durch einen Überschuss an <strong>Wasserstoff-Kationen (H⁺-Ionen)</strong> aus. Manchmal werden diese auch als Hydronium-Ionen (H₃O⁺) dargestellt, wenn ihre Reaktion mit Wasser berücksichtigt wird.</li>
+                <li><strong>Neutrale Lösungen</strong> (pH-Wert ca. 7) haben eine ausgeglichene Konzentration von H⁺- und OH⁻-Ionen (dazu gleich mehr).</li>
+                <li><strong>Alkalische Lösungen</strong> (hoher pH-Wert), wie eure Calciumhydroxid-Lösung, haben einen Überschuss an bestimmten Ionen, die für diese Eigenschaft verantwortlich sind.</li>
+            </ul>
+        </div>
+        
+        <button onclick="toggleHint('e-deutung-hydroxid-ion')">Das Hydroxid-Ion (OH⁻)</button>
+        <div id="e-deutung-hydroxid-ion" class="hidden hint-box">
+            <p>Für den alkalischen Charakter von Lösungen sind die <strong>Hydroxid-Ionen</strong> verantwortlich.
+            <br>Ein Hydroxid-Ion besteht aus einem Sauerstoffatom und einem Wasserstoffatom und trägt eine einfache negative Ladung: <strong>OH⁻</strong>.
+            <br>Wenn ein Stoff in Wasser gelöst wird und dabei die Konzentration der Hydroxid-Ionen (OH⁻) erhöht, entsteht eine alkalische Lösung mit einem pH-Wert über 7.
+            <br><strong>Je höher die Konzentration an OH⁻-Ionen, desto stärker alkalisch ist die Lösung und desto höher ist der pH-Wert.</strong></p>
+        </div>
+
+        <button onclick="toggleHint('e-deutung-aetzwirkung-basen')">Die ätzende Wirkung von Basen/alkalischen Lösungen</button>
+        <div id="e-deutung-aetzwirkung-basen" class="hidden hint-box">
+            <p>Ihr wisst bereits, dass Säuren ätzend sein können. Aber auch starke Basen (Stoffe, die stark alkalische Lösungen bilden) sind ätzend! Die Gefahrensymbole auf dem Zementsack weisen darauf hin.
+            <br>Die <strong>Hydroxid-Ionen (OH⁻)</strong> sind in konzentrierten alkalischen Lösungen für die ätzende Wirkung verantwortlich. Sie können organische Materialien, wie Haut und Schleimhäute, durch chemische Reaktionen (z.B. Verseifung von Fetten, Denaturierung von Proteinen) zerstören.</p>
+        </div>
+
+        <h3>Reaktionsgleichungen</h3>
+        <p><strong>1. Reaktion von Calciumoxid (aus Zement) mit Wasser zu Calciumhydroxid:</strong></p>
+        <p>CaO (s) + H₂O (l) → <input type="text" id="e-produkt-hydroxid" placeholder="Produktformel hier"> <button onclick="checkEProduktHydroxid()">Prüfen</button> <span id="e-produkt-hydroxid-feedback"></span></p>
+        <button onclick="showSolution('e-produkt-hydroxid-loesung', 'Ca(OH)₂ (s/aq)')">Lösung anzeigen</button>
+        <div id="e-produkt-hydroxid-loesung" class="hidden hint-box">Lösung: Ca(OH)₂ (s/aq)</div>
+
+        <p><strong>2. Dissoziation von Calciumhydroxid in Wasser (Freisetzung der Hydroxid-Ionen):</strong></p>
+        <p>Calciumhydroxid ist eine Base. In Wasser dissoziiert es (zerfällt in Ionen) und setzt dabei Hydroxid-Ionen (OH⁻) frei, welche die Lösung alkalisch machen.</p>
+        <p>Ca(OH)₂ (aq) → <input type="text" id="e-produkt-kation" placeholder="Kation"> + <input type="text" id="e-produkt-anion" placeholder="Anion(en)"> <button onclick="checkEDissoziation()">Prüfen</button> <span id="e-dissoziation-feedback"></span></p>
+        <button onclick="showSolution('e-dissoziation-loesung', 'Ca²⁺ (aq) + 2 OH⁻ (aq)')">Lösung anzeigen</button>
+        <div id="e-dissoziation-loesung" class="hidden hint-box">Lösung: Ca²⁺ (aq) + 2 OH⁻ (aq)
+            <br><small>Beachte: Pro Formeleinheit Ca(OH)₂ entstehen zwei Hydroxid-Ionen.</small>
+        </div>
+        
+        <button onclick="toggleHint('e-deutung-ph-bezug-vertieft')">Bezug zum pH-Wert und Konzentration</button>
+        <div id="e-deutung-ph-bezug-vertieft" class="hidden hint-box">
+            <p>Erläutert anhand der Dissoziationsgleichung, warum die Konzentration der Hydroxid-Ionen (OH⁻) in der Lösung ansteigt und wie dies den pH-Wert direkt beeinflusst (höhere OH⁻-Konzentration = höherer pH-Wert = stärker alkalisch).</p>
+        </div>
+
+        <button onclick="toggleHint('e-deutung-fachsprache')">Hinweis zur Fachsprache</button>
+        <div id="e-deutung-fachsprache" class="hidden hint-box">
+            <p>Achtet auf eine exakte chemische Fachsprache: Base, alkalische Lösung, Hydroxid-Ion, Dissoziation, Konzentration, pH-Wert, Kation, Anion.</p>
+        </div>
+    </section>
+
+    <section id="erkenntnis-e">
+        <h2>Erkenntnis: Merksatz formulieren (E-Kurs)</h2>
+        
+        <button onclick="toggleHint('e-erkenntnis-schluesselbegriffe')">Schlüsselbegriffe für den Merksatz</button>
+        <div id="e-erkenntnis-schluesselbegriffe" class="hidden hint-box">
+            <p>In eurem Merksatz sollten folgende Begriffe oder deren Umschreibungen vorkommen:</p>
+            <ul>
+                <li>Calciumoxid (CaO), Calciumhydroxid (Ca(OH)₂)</li>
+                <li>Base / alkalische Lösung</li>
+                <li><strong>Hydroxid-Ionen (OH⁻)</strong> als Ursache für Alkalität</li>
+                <li>Dissoziation</li>
+                <li>hoher pH-Wert</li>
+                <li>ätzende Wirkung (durch OH⁻-Ionen)</li>
+                <li>Schutzmaßnahmen</li>
+            </ul>
+        </div>
+
+        <button onclick="toggleHint('e-erkenntnis-anforderung')">Anforderung an den Merksatz</button>
+        <div id="e-erkenntnis-anforderung" class="hidden hint-box">
+            <p>Formuliert einen prägnanten Merksatz, der den chemischen Prozess von der Reaktion des Zements mit Wasser über die Bildung der Hydroxid-Ionen bis zur resultierenden Gefahr und den notwendigen Schutzmaßnahmen wissenschaftlich korrekt und nachvollziehbar erklärt.</p>
+        </div>
+
+        <button onclick="toggleHint('e-erkenntnis-beispiel')">Beispiel für einen anspruchsvollen Merksatz</button>
+        <div id="e-erkenntnis-beispiel" class="hidden hint-box">
+            <p><strong>Mögliche Struktur/Beispiel:</strong><br>
+            Zement enthält Calciumoxid (CaO), das mit Wasser zu Calciumhydroxid (Ca(OH)₂) reagiert. Calciumhydroxid ist eine Base, die in Wasser dissoziiert und dabei Calcium-Ionen (Ca²⁺) sowie <strong>Hydroxid-Ionen (OH⁻)</strong> freisetzt. Der Überschuss an diesen Hydroxid-Ionen verursacht den hohen pH-Wert (stark alkalische Lösung) und ist für die <strong>ätzende Wirkung</strong> auf Haut und Gewebe verantwortlich. Daher sind beim Umgang mit Zement Schutzmaßnahmen wie Handschuhe und Schutzbrille unerlässlich.</p>
+        </div>
+         <textarea id="e-merksatz-input" rows="5" cols="70" placeholder="Formuliere hier deinen Merksatz..."></textarea>
+         <br>
+         <button onclick="checkEMerksatz()">Merksatz prüfen (Selbstkontrolle)</button>
+         <div id="e-merksatz-feedback" class="hint-box hidden"></div>
+    </section>
+
+    <script>
+        function toggleHint(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden');
+        }
+
+        function showSolution(id, solutionText) {
+            const element = document.getElementById(id);
+            element.innerHTML = solutionText;
+            element.classList.remove('hidden');
+        }
+
+        function checkEProduktHydroxid() {
+            const input = document.getElementById('e-produkt-hydroxid').value.replace(/\s/g, '');
+            const feedback = document.getElementById('e-produkt-hydroxid-feedback');
+            if (input.toUpperCase() === 'CA(OH)2' || input.toUpperCase() === 'CA(OH)₂') {
+                feedback.innerHTML = 'Korrekt! <span class="correct">Ca(OH)₂</span>';
+                feedback.className = 'correct';
+            } else {
+                feedback.textContent = 'Überprüfe die Formel (Indexzahlen, Klammern).';
+                feedback.className = 'incorrect';
+            }
+        }
+
+        function checkEDissoziation() {
+            const kationInput = document.getElementById('e-produkt-kation').value.replace(/\s/g, '');
+            const anionInput = document.getElementById('e-produkt-anion').value.replace(/\s/g, '');
+            const feedback = document.getElementById('e-dissoziation-feedback');
+            
+            let kationCorrect = (kationInput === 'Ca2+' || kationInput === 'Ca²⁺');
+            let anionCorrect = (anionInput === '2OH-' || anionInput === '2OH⁻'); 
+
+            if (kationCorrect && anionCorrect) {
+                feedback.innerHTML = 'Korrekt! <span class="correct">Ca²⁺ (aq) + 2 OH⁻ (aq)</span>';
+                feedback.className = 'correct';
+            } else {
+                let errorMsg = "Prüfe: ";
+                if (!kationCorrect) errorMsg += "Kation (Formel und Ladung?); ";
+                if (!anionCorrect) errorMsg += "Anion (Formel, Anzahl und Ladung?); ";
+                feedback.textContent = errorMsg;
+                feedback.className = 'incorrect';
+            }
+        }
+
+        function checkEMerksatz() {
+            const merksatz = document.getElementById('e-merksatz-input').value.toLowerCase();
+            const feedback = document.getElementById('e-merksatz-feedback');
+            feedback.classList.remove('hidden');
+            let suggestions = "<strong>Selbstkontrolle deines Merksatzes:</strong><ul>";
+            let foundIssues = 0;
+
+            const keywords = {
+                "calciumoxid (cao)": /calciumoxid|cao/,
+                "calciumhydroxid (ca(oh)₂)": /calciumhydroxid|ca\(oh\)₂|ca\(oh\)2/,
+                "base oder alkalisch": /base|alkalisch|basisch/,
+                "hydroxid-ion (oh⁻)": /hydroxid-ion|hydroxidion|oh⁻|oh-/,
+                "dissoziation oder dissoziiert": /dissoziation|dissoziiert/,
+                "hoher ph-wert": /hoher ph-wert|hohen ph-wert|ph-wert [>] 7/,
+                "ätzend oder verätzung (durch oh⁻)": /ätzend|verätzung|ätz|\sätzung/,
+                "schutzmaßnahme": /schutzmaßnahme|handschuhe|schutzbrille|schützen/
+            };
+
+            for (const key in keywords) {
+                if (!keywords[key].test(merksatz)) {
+                    suggestions += `<li>Ist der Begriff "<strong>${key}</strong>" oder eine passende Umschreibung enthalten und korrekt verwendet?</li>`;
+                    foundIssues++;
+                }
+            }
+            if (!/hydroxid-ion|oh⁻|oh-/.test(merksatz) && (/ätzend/.test(merksatz) || /alkalisch/.test(merksatz))) {
+                 suggestions += `<li>Hast du erklärt, <em>welche Teilchen</em> (Hydroxid-Ionen) die alkalische und ätzende Wirkung verursachen?</li>`;
+                 foundIssues++;
+            }
+
+
+             suggestions += "</ul>";
+
+            if (foundIssues === 0) {
+                feedback.innerHTML = "<strong class='correct'>Sehr gut! Dein Merksatz scheint die wichtigsten chemischen Aspekte und die Kausalkette abzudecken.</strong> Überprüfe ihn abschließend auf sprachliche Präzision und Logik.";
+            } else {
+                feedback.innerHTML = suggestions + "<p>Dein Merksatz ist ein guter Anfang. Überlege, wie du die genannten Aspekte noch präziser oder vollständiger einarbeiten kannst, um die chemischen Zusammenhänge klar darzustellen.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

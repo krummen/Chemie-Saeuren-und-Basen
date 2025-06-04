@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-Kurs: Hilfe Deutung & Merksatz (Zementbrand)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>G-Kurs: Hilfestellungen Zementbrand</h1>
+
+    <section id="deutung-g">
+        <h2>Deutung (G-Kurs)</h2>
+        <p>Erkläre das Ergebnis eurer Untersuchung.</p>
+
+        <button onclick="toggleHint('g-deutung-ph-zuordnung')">Hilfe: pH-Wert und Lösungstyp</button>
+        <div id="g-deutung-ph-zuordnung" class="hidden hint-box">
+            <p>Welchen pH-Wert habt ihr für die Calciumhydroxid-Lösung gemessen? Schaut auf die Farbskala eures Indikators:
+            <ul>
+                <li>Ein <strong>niedriger pH-Wert</strong> (z.B. 1-6) zeigt eine <strong>saure Lösung</strong> an.</li>
+                <li>Ein <strong>pH-Wert um 7</strong> zeigt eine <strong>neutrale Lösung</strong> an (wie reines Wasser).</li>
+                <li>Ein <strong>hoher pH-Wert</strong> (z.B. 8-14) zeigt eine <strong>alkalische Lösung</strong> an.</li>
+            </ul>
+            Welchen Lösungstyp habt ihr also bei der Zementlösung/Calciumhydroxid-Lösung vorliegen?
+            </p>
+        </div>
+
+        <button onclick="toggleHint('g-deutung-erinnerung-sauer')">Erinnerung: Was macht eine Lösung sauer?</button>
+        <div id="g-deutung-erinnerung-sauer" class="hidden hint-box">
+            <p>Ihr wisst, dass Indikatoren in sauren Lösungen eine bestimmte Farbe zeigen. Erinnert ihr euch, welche besonderen Teilchen in einer sauren Lösung im Überschuss vorhanden sind?</p>
+            <p><strong>Tipp:</strong> Es sind positiv geladene Teilchen, die mit "W" anfangen... <button onclick="showSolution('g-loesung-sauer-teilchen', 'Wasserstoff-Kationen (H⁺-Ionen)')">Lösung anzeigen</button></p>
+            <div id="g-loesung-sauer-teilchen" class="hidden">Lösung: In sauren Lösungen gibt es einen Überschuss an <strong>Wasserstoff-Kationen (H⁺-Ionen)</strong>.</div>
+        </div>
+
+        <button onclick="toggleHint('g-deutung-alkalisch-neu')">Neu: Was macht eine Lösung alkalisch?</button>
+        <div id="g-deutung-alkalisch-neu" class="hidden hint-box">
+            <p>Eure Zementlösung/Calciumhydroxid-Lösung ist alkalisch (hat einen hohen pH-Wert). Ähnlich wie bei sauren Lösungen gibt es auch hier bestimmte Teilchen, die dafür verantwortlich sind.
+            <br>In alkalischen Lösungen sind <strong>Hydroxid-Ionen</strong> im Überschuss vorhanden. Das Formelzeichen für ein Hydroxid-Ion ist <strong>OH⁻</strong> (ein Sauerstoffatom und ein Wasserstoffatom, die zusammen eine negative Ladung tragen).</p>
+            <p><strong>Je mehr OH⁻-Ionen in einer Lösung sind, desto alkalischer ist sie und desto höher ist der pH-Wert.</strong></p>
+        </div>
+
+        <button onclick="toggleHint('g-deutung-aetzend-alkalisch')">Warum sind alkalische Lösungen ätzend?</button>
+        <div id="g-deutung-aetzend-alkalisch" class="hidden hint-box">
+            <p>Ihr habt gesehen, dass der Zementsack ein Warnsymbol für "ätzend" trägt. Auch viele alkalische Lösungen, besonders solche mit einem sehr hohen pH-Wert (also vielen OH⁻-Ionen), sind ätzend – genau wie starke Säuren!</p>
+            <p>Die <strong>Hydroxid-Ionen (OH⁻)</strong> in der Calciumhydroxid-Lösung sind verantwortlich für die ätzende Wirkung auf die Haut. Sie können Haut und anderes Gewebe angreifen und zerstören.</p>
+        </div>
+
+        <h3>Reaktionsgleichung (einfach)</h3>
+        <p>Im Zement ist "gebrannter Kalk". Das reagiert mit Wasser zu "gelöschtem Kalk", dem Calciumhydroxid, welches dann die Hydroxid-Ionen (OH⁻) freisetzt.</p>
+        <button onclick="toggleHint('g-deutung-wortgleichung')">Hilfe zur Wortgleichung</button>
+        <div id="g-deutung-wortgleichung" class="hidden hint-box">
+            <p>Versuche, die Wortgleichung zu vervollständigen:</p>
+            <p>Gebrannter Kalk + Wasser → <input type="text" id="g-produkt-wort" placeholder="Produktname"> <button onclick="checkGProduktWort()">Prüfen</button> <span id="g-produkt-wort-feedback"></span></p>
+            <button onclick="showSolution('g-produkt-wort-loesung', 'Gelöschter Kalk (Calciumhydroxid)')">Lösung anzeigen</button>
+            <div id="g-produkt-wort-loesung" class="hidden">Lösung: Gelöschter Kalk (Calciumhydroxid)</div>
+        </div>
+
+        <button onclick="toggleHint('g-deutung-symbolgleichung')">Hilfe zur Symbolgleichung (vereinfacht)</button>
+        <div id="g-deutung-symbolgleichung" class="hidden hint-box">
+            <p>CaO + H₂O → <input type="text" id="g-produkt-symbol" placeholder="Produktformel"> <button onclick="checkGProduktSymbol()">Prüfen</button> <span id="g-produkt-symbol-feedback"></span></p>
+            <button onclick="showSolution('g-produkt-symbol-loesung', 'Ca(OH)₂')">Lösung anzeigen</button>
+            <div id="g-produkt-symbol-loesung" class="hidden">Lösung: Ca(OH)₂ (Dieses Calciumhydroxid liefert dann die OH⁻-Ionen)</div>
+        </div>
+        
+        <h3>Satzbausteine für deine Erklärung:</h3>
+        <button onclick="toggleHint('g-deutung-satzbausteine')">Satzbausteine anzeigen</button>
+        <div id="g-deutung-satzbausteine" class="hidden hint-box">
+            <ul>
+                <li>Die Zementlösung/Calciumhydroxid-Lösung hat einen pH-Wert von ..., sie ist also ... .</li>
+                <li>In alkalischen Lösungen gibt es viele ...-Ionen (Formel: ...).</li>
+                <li>Diese ...-Ionen sind verantwortlich für die ... Wirkung und den hohen pH-Wert.</li>
+                <li>Deshalb ist Zement ... für die Haut.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="erkenntnis-g">
+        <h2>Erkenntnis: Merksatz formulieren (G-Kurs)</h2>
+        
+        <button onclick="toggleHint('g-erkenntnis-leitfragen')">Leitfragen für den Merksatz</button>
+        <div id="g-erkenntnis-leitfragen" class="hidden hint-box">
+            <ul>
+                <li>Was passiert, wenn Zement mit Wasser in Kontakt kommt und welcher Stoff entsteht hauptsächlich?</li>
+                <li>Ist die Lösung dieses Stoffes sauer, neutral oder alkalisch?</li>
+                <li>Welche Teilchen (Ionen) sind in dieser Lösung besonders viele vorhanden und wie lautet ihre Formel?</li>
+                <li>Warum ist diese Lösung gefährlich für die Haut (welche Wirkung hat sie)?</li>
+                <li>Was sollte man daher beim Umgang mit Zement beachten?</li>
+            </ul>
+        </div>
+
+        <button onclick="toggleHint('g-erkenntnis-satzanfang')">Satzanfänge / Wortbausteine</button>
+        <div id="g-erkenntnis-satzanfang" class="hidden hint-box">
+            <p>Versuche, einen Merksatz zu bilden. Hier sind Anfänge:</p>
+            <ul>
+                <li>Zement reagiert mit Wasser zu Calciumhydroxid.</li>
+                <li>Calciumhydroxid-Lösung ist alkalisch, weil sie viele ...-Ionen (Formel: ...) enthält.</li>
+                <li>Diese Ionen verursachen einen hohen ...-Wert und können die Haut ... .</li>
+                <li>Deshalb sollte man beim Arbeiten mit Zement immer ... tragen.</li>
+            </ul>
+            <p><strong>Beispielstruktur für einen Merksatz:</strong><br>
+            Wenn Zement nass wird, entsteht Calciumhydroxid. Diese Lösung ist alkalisch, weil sie viele Hydroxid-Ionen (OH⁻) enthält. Diese OH⁻-Ionen machen die Lösung ätzend für die Haut. Deshalb ist das Tragen von [Schutzmaßnahme] wichtig.</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleHint(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden');
+        }
+
+        function showSolution(id, solutionText) {
+            const element = document.getElementById(id);
+            element.innerHTML = solutionText; // Use innerHTML to allow bold tags etc.
+            element.classList.remove('hidden');
+        }
+
+        function checkGProduktWort() {
+            const input = document.getElementById('g-produkt-wort').value.toLowerCase();
+            const feedback = document.getElementById('g-produkt-wort-feedback');
+            if (input.includes('kalk') && (input.includes('gelöscht') || input.includes('calciumhydroxid'))) {
+                feedback.textContent = 'Richtig!';
+                feedback.className = 'correct';
+            } else {
+                feedback.textContent = 'Versuch es nochmal oder nutze die Lösung.';
+                feedback.className = 'incorrect';
+            }
+        }
+
+        function checkGProduktSymbol() {
+            const input = document.getElementById('g-produkt-symbol').value.replace(/\s/g, '');
+            const feedback = document.getElementById('g-produkt-symbol-feedback');
+            if (input.toUpperCase() === 'CA(OH)2' || input.toUpperCase() === 'CAOH2') {
+                feedback.textContent = 'Sehr gut!';
+                feedback.className = 'correct';
+            } else {
+                feedback.textContent = 'Noch nicht ganz. Achte auf Groß- und Kleinschreibung und die richtigen Zahlen.';
+                feedback.className = 'incorrect';
+            }
+        }
+    </script>
+</body>
+</html>

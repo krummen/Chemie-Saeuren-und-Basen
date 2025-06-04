@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemie-Hilfe: Zementbrand</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #0056b3; /* Dunkelblau */
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h2 {
+            color: #007bff; /* Helles Blau */
+            margin-bottom: 1em;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 1.5em;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Abstand zwischen den Buttons */
+            margin-top: 20px;
+            flex-wrap: wrap; /* Buttons umbrechen auf kleinen Bildschirmen */
+        }
+        .button {
+            display: inline-block;
+            background-color: #28a745; /* Grün */
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .button:hover {
+            background-color: #218838; /* Dunkleres Grün */
+            transform: translateY(-2px);
+        }
+        .button.e-kurs {
+            background-color: #ffc107; /* Gelb/Orange für E-Kurs */
+            color: #212529; /* Dunkler Text für besseren Kontrast */
+        }
+        .button.e-kurs:hover {
+            background-color: #e0a800; /* Dunkleres Gelb/Orange */
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            margin-top: auto; /* Drückt den Footer nach unten */
+            width: 100%;
+            background-color: #343a40; /* Dunkelgrau */
+            color: #f8f9fa; /* Heller Text */
+            font-size: 0.9em;
+        }
+        .info-text {
+            margin-top: 2em;
+            font-size: 0.95em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chemie-Hilfe: Das Experiment zum Zementbrand</h1>
+    </header>
+
+    <div class="container">
+        <h2>Willkommen!</h2>
+        <p>Hier findest du interaktive Hilfestellungen zu den Aufgabenpunkten "Deutung" und "Merksatz formulieren" für das Thema Zementbrand. Wähle bitte deinen Kurs aus, um die passenden Hilfen zu erhalten:</p>
+
+        <div class="button-container">
+            <a href="g_kurs_hilfe.html" class="button">Hilfe für den G-Kurs</a>
+            <a href="e_kurs_hilfe.html" class="button e-kurs">Hilfe für den E-Kurs</a>
+        </div>
+
+        <div class="info-text">
+            <p><strong>Hinweis zur Nutzung auf GitHub Pages:</strong><br>
+            Diese Seite und die verlinkten Hilfeseiten wurden für die Nutzung im Webbrowser erstellt. Stelle sicher, dass die Dateien `style.css`, `g_kurs_hilfe.html` und `e_kurs_hilfe.html` im selben Verzeichnis wie diese `index.html` liegen, wenn du sie lokal öffnest oder auf GitHub Pages hochlädst.</p>
+            <p>Wenn du dieses Projekt von GitHub heruntergeladen hast (als ZIP), entpacke es zuerst vollständig, bevor du die `index.html` öffnest.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dein Name / Deine Schule. Erstellt zur Unterstützung des Chemieunterrichts.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-Kurs: Hilfe Deutung & Merksatz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>G-Kurs: Hilfestellungen</h1>
+
+    <section id="deutung-g">
+        <h2>Deutung (G-Kurs)</h2>
+        <p>Erkläre das Ergebnis (auch mithilfe von Reaktionsgleichungen).</p>
+
+        <button onclick="toggleHint('g-deutung-ph')">Hilfe zum pH-Wert</button>
+        <div id="g-deutung-ph" class="hidden hint-box">
+            <p>Welchen pH-Wert habt ihr für die Calciumhydroxid-Lösung gemessen? Schaut auf die pH-Skala: Ist das sauer, neutral oder alkalisch/basisch?</p>
+        </div>
+
+        <button onclick="toggleHint('g-deutung-gefahr')">Hilfe zum Gefahrensymbol</button>
+        <div id="g-deutung-gefahr" class="hidden hint-box">
+            <p>Das Gefahrensymbol auf dem Zementsack zeigt "ätzend". Eure Messung zeigt einen hohen (oder niedrigen?) pH-Wert. Welchen Zusammenhang seht ihr zwischen der ätzenden Wirkung und dem pH-Wert?</p>
+        </div>
+
+        <h3>Reaktionsgleichung (einfach)</h3>
+        <p>Im Zement ist "gebrannter Kalk". Das reagiert mit Wasser zu "gelöschtem Kalk", dem Calciumhydroxid.</p>
+        <button onclick="toggleHint('g-deutung-wortgleichung')">Hilfe zur Wortgleichung</button>
+        <div id="g-deutung-wortgleichung" class="hidden hint-box">
+            <p>Versuche, die Wortgleichung zu vervollständigen:</p>
+            <p>Gebrannter Kalk + Wasser → <input type="text" id="g-produkt-wort" placeholder="Dein Produkt hier"> <button onclick="checkGProduktWort()">Prüfen</button> <span id="g-produkt-wort-feedback"></span></p>
+            <button onclick="showSolution('g-produkt-wort-loesung', 'Gelöschter Kalk (Calciumhydroxid)')">Lösung anzeigen</button>
+            <div id="g-produkt-wort-loesung" class="hidden">Lösung: Gelöschter Kalk (Calciumhydroxid)</div>
+        </div>
+
+        <button onclick="toggleHint('g-deutung-symbolgleichung')">Hilfe zur Symbolgleichung (vereinfacht)</button>
+        <div id="g-deutung-symbolgleichung" class="hidden hint-box">
+            <p>CaO + H₂O → <input type="text" id="g-produkt-symbol" placeholder="Dein Produkt hier"> <button onclick="checkGProduktSymbol()">Prüfen</button> <span id="g-produkt-symbol-feedback"></span></p>
+            <button onclick="showSolution('g-produkt-symbol-loesung', 'Ca(OH)₂')">Lösung anzeigen</button>
+            <div id="g-produkt-symbol-loesung" class="hidden">Lösung: Ca(OH)₂</div>
+        </div>
+        
+        <button onclick="toggleHint('g-deutung-ionen')">Was macht die Lösung alkalisch?</button>
+        <div id="g-deutung-ionen" class="hidden hint-box">
+            <p>Calciumhydroxid löst sich in Wasser und zerfällt dabei in Teilchen. Eines dieser Teilchen ist das <strong>Hydroxid-Ion (OH⁻)</strong>. Diese OH⁻-Ionen machen die Lösung alkalisch und sind für die ätzende Wirkung verantwortlich.</p>
+        </div>
+
+        <h3>Satzbausteine für deine Erklärung:</h3>
+        <button onclick="toggleHint('g-deutung-satzbausteine')">Satzbausteine anzeigen</button>
+        <div id="g-deutung-satzbausteine" class="hidden hint-box">
+            <ul>
+                <li>Die Calciumhydroxid-Lösung hat einen pH-Wert von ..., sie ist also ... .</li>
+                <li>Das bedeutet, dass viele ...-Ionen in der Lösung sind.</li>
+                <li>Diese Ionen sind verantwortlich für die ... Wirkung.</li>
+                <li>Deshalb ist Zement ... für die Haut.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="erkenntnis-g">
+        <h2>Erkenntnis: Merksatz formulieren (G-Kurs)</h2>
+        
+        <button onclick="toggleHint('g-erkenntnis-leitfragen')">Leitfragen für den Merksatz</button>
+        <div id="g-erkenntnis-leitfragen" class="hidden hint-box">
+            <ul>
+                <li>Was passiert, wenn Zement mit Wasser in Kontakt kommt?</li>
+                <li>Welcher Stoff entsteht dabei? (Name und Eigenschaft: sauer/neutral/alkalisch)</li>
+                <li>Warum ist dieser Stoff gefährlich für die Haut?</li>
+                <li>Was sollte man daher beim Umgang mit Zement beachten?</li>
+            </ul>
+        </div>
+
+        <button onclick="toggleHint('g-erkenntnis-satzanfang')">Satzanfänge / Wortbausteine</button>
+        <div id="g-erkenntnis-satzanfang" class="hidden hint-box">
+            <p>Versuche, einen Merksatz zu bilden. Hier sind Anfänge:</p>
+            <ul>
+                <li>Zement reagiert mit Wasser zu ... .</li>
+                <li>... ist eine alkalische/basische Lösung, weil sie ... enthält.</li>
+                <li>Alkalische Lösungen mit hohem pH-Wert können die Haut ..., deshalb ... .</li>
+                <li>Beim Arbeiten mit Zement sollte man immer ... tragen.</li>
+            </ul>
+            <p><strong>Beispielstruktur für einen Merksatz:</strong><br>
+            Wenn Zement nass wird, entsteht [Stoffname], eine [Eigenschaft: z.B. alkalische] Lösung, die die Haut [Wirkung: z.B. verätzen] kann. Deshalb ist [Schutzmaßnahme: z.B. das Tragen von Handschuhen] wichtig.</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleHint(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden');
+        }
+
+        function showSolution(id, solutionText) {
+            const element = document.getElementById(id);
+            element.textContent = solutionText;
+            element.classList.remove('hidden');
+        }
+
+        function checkGProduktWort() {
+            const input = document.getElementById('g-produkt-wort').value.toLowerCase();
+            const feedback = document.getElementById('g-produkt-wort-feedback');
+            if (input.includes('kalk') && (input.includes('gelöscht') || input.includes('calciumhydroxid'))) {
+                feedback.textContent = 'Richtig!';
+                feedback.className = 'correct';
+            } else {
+                feedback.textContent = 'Versuch es nochmal oder nutze die Lösung.';
+                feedback.className = 'incorrect';
+            }
+        }
+
+        function checkGProduktSymbol() {
+            const input = document.getElementById('g-produkt-symbol').value.replace(/\s/g, ''); // remove spaces
+            const feedback = document.getElementById('g-produkt-symbol-feedback');
+            if (input.toUpperCase() === 'CA(OH)2' || input.toUpperCase() === 'CAOH2') { // Allow common simplifications
+                feedback.textContent = 'Sehr gut!';
+                feedback.className = 'correct';
+            } else {
+                feedback.textContent = 'Noch nicht ganz. Achte auf Groß- und Kleinschreibung und die richtigen Zahlen.';
+                feedback.className = 'incorrect';
+            }
+        }
+    </script>
+</body>
+</html>

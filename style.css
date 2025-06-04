@@ -1,0 +1,77 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #0056b3; /* Dunkelblau */
+}
+
+section {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button {
+    background-color: #007bff; /* Helles Blau */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Dunkleres Blau beim Hover */
+}
+
+.hidden {
+    display: none;
+}
+
+.hint-box {
+    background-color: #e9ecef; /* Hellgrau */
+    border-left: 5px solid #007bff; /* Blauer Rand links */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+input[type="text"] {
+    padding: 6px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: red;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
